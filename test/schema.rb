@@ -1,8 +1,13 @@
 ActiveRecord::Schema.define(:version => 0) do
   create_table :companies, :force => true do |t|
     t.column :name, :string
+    t.integer :investor_id
   end  
-  
+
+  create_table :investors, :force => true do |t|
+    t.column :name, :string
+  end
+
   create_table :locations, :force => true do |t|
     t.column :company_id,  :integer, :default => 0,  :null => false
     t.column :street,      :string,  :limit => 60
